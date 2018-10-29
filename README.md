@@ -100,12 +100,34 @@ then set enable to true and complet the text field of jitsi url with your domain
 
 That's it ! Enjoy !
 
-# Tools
+# Container
+here is a a short description of each docker image used in this project
+
+## rocketchat
+We get a container using the last image of rocket.chat, and this container is in charge of the website. He depends on mongo image to save his data. His Default port is 3000
+
 ## mongo
+mongo is an noSQL database. Here it is used to save data from RocketChat website. He will use an internal port 27017 to communicate with rocketchat.
+You acces it using this command line:
+```
+docker exec -it rocketchat_mongo_1 /bin/bash
+mongo
+```
+
+## hubot
+hubot is an image to manage the chat bot in rocketchat. he use internal port 3001 to communicate with rocketchat.
+
+## web
+jitsi implement an image web create a website. This service use port 80 and 443 to get http and https access.
+
 ## jicofo
+Conference focus is mandatory component of Jitsi Meet conferencing system next to the videobridge. It is responsible for managing media sessions between each of the participants and the videobridge.
+
 ## jvb
+Jvb is a videobrideo allowing videoconferencing for jitsi. It work using port 10000 in udp.
+
 ## prosody
-## NGINX
+This service is in charge of the XMPP server (provides basic messaging, presence and XML routing). It use interal port as 5222, 5347, 5280 to link with the other jitsi services
 
 # Update & Save
 to update any container image just type these command line:
