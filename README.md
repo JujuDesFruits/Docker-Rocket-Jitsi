@@ -58,7 +58,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-## Git repertories
+## Git repositories
 to install git command just type
 ```
 yum install git
